@@ -1,5 +1,5 @@
-#ifndef _stack_h
-#define _stack_h
+#ifndef _queue_h
+#define _queue_h
 
 typedef struct node{
     void *key;
@@ -8,22 +8,24 @@ typedef struct node{
 }Node;
 
 typedef struct{
-    Node *top;
-}Stack;
+    Node *front;
+    Node *back;
+}SimpleLinkedList;
 
+//********************SIMPLE LINKED LIST***************************//
 
-int freeStack(Stack **stack);
+int freeSimpleLinkedList(SimpleLinkedList **queue);
 
-int isEmpty(Stack *stack);
+int isEmpty(SimpleLinkedList *queue);
 
 void *newNode();
 
-void *newStack();
+void *newSimpleLinkedList();
 
-void *pop(Stack *stack);
+void *popSimpleLinkedList(SimpleLinkedList *queue);
 
-int push(Stack *stack, Node *node, char *type);
+int pushSimpleLinkedList(SimpleLinkedList *queue, Node *node, char *type);
 
-int printStack(const Stack *stack, void (*printKey)(Node *node));
+int printSimpleLinkedList(const SimpleLinkedList *queue, void (*printKey)(Node *node));
 
 #endif

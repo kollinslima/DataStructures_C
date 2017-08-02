@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include "stack.h"
+#include "queue.h"
 
-int isEmpty(Stack *stack){
+int isEmpty(SimpleLinkedList *queue){
 
-	return stack->top == NULL? 1 : 0;
+	return stack->front == NULL? 1 : 0;
 }
