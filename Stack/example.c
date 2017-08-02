@@ -3,17 +3,33 @@
 #include<stdlib.h>
 #include"stack.h"
 
+typedef struct{
+
+	int a;
+	float b;	
+
+}elemento;
+
 void printStk(Node *node){
-	if(node->type == NULL)
+	if(node->type == NULL){
 		printf("%lf\n", *(double*)node->key);
-	else if(!strcmp("INT", node->type))
+	}
+	else if(!strcmp("INT", node->type)){
 		printf("%d\n", *(int*)node->key);
+	}
 
-	else if(!strcmp("FLOAT", node->type))
+	else if(!strcmp("FLOAT", node->type)){
 		printf("%f\n", *(float*)node->key);
+	}
 
-	else if(!strcmp("CHAR", node->type))
+	else if(!strcmp("CHAR", node->type)){
 		printf("%c\n", *(char*)node->key);
+	}
+	else if (!strcmp("ELEMENTO", node->type)) {
+		printf("int %d\n", (((elemento*)node->key)->a));
+		printf("float %f\n", (((elemento*)node->key)->b));
+
+	}
 }
 
 void test(Stack *t){
@@ -35,13 +51,14 @@ void test(Stack *t){
 
 void loopTest(Stack *t){
 
-	int i;
+	int i = 0;
 
 	for (i = 0; i < 10; i++) {
 		Node *n = newNode();
 		int *aux = (int*) malloc(sizeof(int));
 		*aux = i;
-		push(t,n,"INT");
+		n->key = aux;
+		push(t, n, "INT");
 	}
 
 }
@@ -51,24 +68,20 @@ void main(){
 	Stack *t = newStack();
 
 	Node *n1 = newNode();
-	Node *n2 = newNode();
 
-	int a = 5;
-	char b = 'a';
+	elemento *element = (elemento*) malloc(sizeof(elemento));
+	element->a = 5;
+	element->b = 7.2;
 
 
-	n1->key = &a;
-	n2->key = &b;
+	n1->key = element;
 
-	push(t, n1, "INT");
-	push(t, n2, "CHAR");
+	push(t, n1, "ELEMENTO");
 
 	test(t);
 	loopTest(t);
 
 	printStack(t,&printStk);
-	    
-	printf("Retorno: %lf",*(double*)pop(t));
 
 	puts("");
 
