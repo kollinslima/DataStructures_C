@@ -45,8 +45,8 @@ void test(Stack *t){
 	n3->key = c;
 	n4->key = d;
 
-	pushStack(t, n3, "FLOAT");
-	pushStack(t, n4, NULL);
+	push(t, n3, "FLOAT");
+	push(t, n4, NULL);
 }
 
 void loopTest(Stack *t){
@@ -58,7 +58,7 @@ void loopTest(Stack *t){
 		int *aux = (int*) malloc(sizeof(int));
 		*aux = i;
 		n->key = aux;
-		pushStack(t, n, "INT");
+		push(t, n, "INT");
 	}
 
 }
@@ -76,14 +76,12 @@ void main(){
 
 	n1->key = element;
 
-	pushStack(t, n1, "ELEMENTO");
+	push(t, n1, "ELEMENTO");
 
 	test(t);
 	loopTest(t);
 
 	printStack(t,&printStk);
-
-	popStack(t);
 
 	puts("");
 

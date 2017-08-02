@@ -20,9 +20,9 @@ void *newNode();
 
 void *newStack();
 
-void *popStack(Stack *stack);
+void *pop(Stack *stack);
 
-int pushStack(Stack *stack, Node *node, char *type);
+int push(Stack *stack, Node *node, char *type);
 
 int printStack(const Stack *stack, void (*printKey)(Node *node));
 
