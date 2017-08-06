@@ -1,20 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "stack.h"
+#include "queue.h"
 
-int freeStack(Stack **stack){
+int freeSimpleLinkedList(SimpleLinkedList **queue){
 
-	while((*stack)->top != NULL){
+	(*queue)->back = NULL;
 
-		Node *auxNode = (*stack)->top;
-		(*stack)->top = (*stack)->top->next;
+	while((*queue)->front != NULL){
+
+		Node *auxNode = (*queue)->front;
+		(*queue)->front = (*queue)->front->next;
 
 		if(auxNode->key != NULL) free(auxNode->key);
 		if(auxNode->type != NULL) free(auxNode->type);
 		free(auxNode);
 	}
 
-	free(*stack);
+	free(*queue);
 
 	return 0;
 }

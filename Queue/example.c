@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
-#include"stack.h"
+#include"queue.h"
 
 typedef struct{
 
@@ -10,7 +10,7 @@ typedef struct{
 
 }elemento;
 
-void printStk(Node *node){
+void printQue(Node *node){
 	if(node->type == NULL){
 		printf("%lf\n", *(double*)node->key);
 	}
@@ -32,7 +32,7 @@ void printStk(Node *node){
 	}
 }
 
-void test(Stack *t){
+void test(SimpleLinkedList *t){
 
 	Node *n3 = newNode();
 	Node *n4 = newNode();
@@ -45,11 +45,11 @@ void test(Stack *t){
 	n3->key = c;
 	n4->key = d;
 
-	push(t, n3, "FLOAT");
-	push(t, n4, NULL);
+	pushSimpleLinkedList(t, n3, "FLOAT");
+	pushSimpleLinkedList(t, n4, NULL);
 }
 
-void loopTest(Stack *t){
+void loopTest(SimpleLinkedList *t){
 
 	int i = 0;
 
@@ -58,14 +58,14 @@ void loopTest(Stack *t){
 		int *aux = (int*) malloc(sizeof(int));
 		*aux = i;
 		n->key = aux;
-		push(t, n, "INT");
+		pushSimpleLinkedList(t, n, "INT");
 	}
 
 }
 
 void main(){
     
-	Stack *t = newStack();
+	SimpleLinkedList *t = newSimpleLinkedList();
 
 	Node *n1 = newNode();
 
@@ -76,16 +76,18 @@ void main(){
 
 	n1->key = element;
 
-	push(t, n1, "ELEMENTO");
+	pushSimpleLinkedList(t, n1, "ELEMENTO");
 
 	test(t);
 	loopTest(t);
 
-	printStack(t,&printStk);
+	printSimpleLinkedList(t,&printQue);
 
 	puts("");
 
-	printStack(t,&printStk);
+	popSimpleLinkedList(t);
 
-	freeStack(&t);
+	printSimpleLinkedList(t,&printQue);
+
+	freeSimpleLinkedList(&t);
 }

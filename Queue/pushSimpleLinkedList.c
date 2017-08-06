@@ -1,9 +1,9 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-#include"stack.h"
+#include"queue.h"
 
-int push(Stack *stack, Node *node, char *type){
+int pushSimpleLinkedList(SimpleLinkedList *queue, Node *node, char *type){
 
 	Node *nNode = (Node*) newNode();
 
@@ -22,14 +22,15 @@ int push(Stack *stack, Node *node, char *type){
 		nNode->type == NULL;
 	}
 
-	if(isEmpty(stack)){
-		nNode->next = NULL;
+	if(isEmpty(queue)){
+		queue->front = nNode;
 	}
 	else{
-		nNode->next = stack->top;
+		queue->back->next = nNode;
 	}
 
-	stack->top = nNode;
+	nNode->next = NULL;
+	queue->back = nNode;
 
 	return 0;
 }

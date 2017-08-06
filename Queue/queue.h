@@ -18,9 +18,9 @@ int freeSimpleLinkedList(SimpleLinkedList **queue);
 
 int isEmpty(SimpleLinkedList *queue);
 
-void *newNode();
+Node *newNode();
 
-void *newSimpleLinkedList();
+SimpleLinkedList *newSimpleLinkedList();
 
 void *popSimpleLinkedList(SimpleLinkedList *queue);
 

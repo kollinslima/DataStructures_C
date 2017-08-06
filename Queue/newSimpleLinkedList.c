@@ -1,13 +1,14 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include"stack.h"
+#include"queue.h"
 
-void *newStack(){
+SimpleLinkedList *newSimpleLinkedList(){
 
-    Stack *nStack = (Stack*)malloc(sizeof(Stack));
-    nStack->top = NULL;
+    SimpleLinkedList *nSLL = (SimpleLinkedList*)malloc(sizeof(SimpleLinkedList));
+    nSLL->front = NULL;
+    nSLL->back = NULL;
 
-    void *stackPointer = nStack;
+//    void *sllPointer = nSLL;
     
-    return stackPointer;
+    return nSLL;
 }

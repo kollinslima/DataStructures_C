@@ -1,17 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "stack.h"
+#include "queue.h"
 
-void *pop(Stack *stack){
+void *popSimpleLinkedList(SimpleLinkedList *queue){
 
-	if(isEmpty(stack)){
+	if(isEmpty(queue)){
 		return NULL;
 	}
 	
-	Node *auxNode = stack->top;
-	void *auxKey = stack->top->key;
+	Node *auxNode = queue->front;
+	void *auxKey = queue->front->key;
 
-	stack->top = stack->top->next;
+	queue->front = queue->front->next;
+	
+	if(queue->front == NULL) queue->back = NULL;
 
 	if(auxNode->key != NULL) free(auxNode->key);
 	if(auxNode->type != NULL) free(auxNode->type);

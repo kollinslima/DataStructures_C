@@ -16,9 +16,9 @@ int freeStack(Stack **stack);
 
 int isEmpty(Stack *stack);
 
-void *newNode();
+Node *newNode();
 
-void *newStack();
+Stack *newStack();
 
 void *popStack(Stack *stack);
 

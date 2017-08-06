@@ -1,9 +1,9 @@
 #include <stdio.h>
-#include "stack.h"
+#include "queue.h"
 
-int printStack(const Stack *stack, void (*printKey)(Node *node)){
+int printSimpleLinkedList(const SimpleLinkedList *queue, void (*printKey)(Node *node)){
 
-	Node *auxNode = stack->top;
+	Node *auxNode = queue->front;
 
 	while(auxNode != NULL){
 		printKey(auxNode);

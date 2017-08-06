@@ -3,5 +3,5 @@
 
 int isEmpty(SimpleLinkedList *queue){
 
-	return stack->front == NULL? 1 : 0;
+	return queue->front == NULL? 1 : 0;
 }
