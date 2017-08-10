@@ -2,13 +2,13 @@
 #include <stdlib.h>
 #include "queue.h"
 
-int freeSimpleLinkedList(SimpleLinkedList **queue){
+int freeSimpleLinkedList(tSimpleLinkedList **queue){
 
 	(*queue)->back = NULL;
 
 	while((*queue)->front != NULL){
 
-		Node *auxNode = (*queue)->front;
+		tNode *auxNode = (*queue)->front;
 		(*queue)->front = (*queue)->front->next;
 
 		if(auxNode->key != NULL) free(auxNode->key);

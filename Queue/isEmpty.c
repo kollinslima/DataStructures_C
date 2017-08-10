@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "queue.h"
 
-int isEmpty(SimpleLinkedList *queue){
+int isEmpty(tSimpleLinkedList *queue){
 
 	return queue->front == NULL? 1 : 0;
 }

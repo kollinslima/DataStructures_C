@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include "stack.h"
 
-int printStack(const Stack *stack, void (*printKey)(Node *node)){
+int printStack(const tStack *stack, void (*printKey)(tNode *node)){
 
-	Node *auxNode = stack->top;
+	tNode *auxNode = stack->top;
 
 	while(auxNode != NULL){
 		printKey(auxNode);

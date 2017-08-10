@@ -5,25 +5,25 @@ typedef struct node{
     void *key;
     char *type;
     struct node *next;
-}Node;
+}tNode;
 
 typedef struct{
-    Node *top;
-}Stack;
+    tNode *top;
+}tStack;
 
 
-int freeStack(Stack **stack);
+int freeStack(tStack **stack);
 
-int isEmpty(Stack *stack);
+int isEmpty(tStack *stack);
 
-Node *newNode();
+tNode *newNode();
 
-Stack *newStack();
+tStack *newStack();
 
-void *popStack(Stack *stack);
+void *popStack(tStack *stack);
 
-int pushStack(Stack *stack, Node *node, char *type);
+int pushStack(tStack *stack, tNode *node, char *type);
 
-int printStack(const Stack *stack, void (*printKey)(Node *node));
+int printStack(const tStack *stack, void (*printKey)(tNode *node));
 
 #endif

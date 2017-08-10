@@ -2,11 +2,11 @@
 #include <stdlib.h>
 #include "stack.h"
 
-int freeStack(Stack **stack){
+int freeStack(tStack **stack){
 
 	while((*stack)->top != NULL){
 
-		Node *auxNode = (*stack)->top;
+		tNode *auxNode = (*stack)->top;
 		(*stack)->top = (*stack)->top->next;
 
 		if(auxNode->key != NULL) free(auxNode->key);

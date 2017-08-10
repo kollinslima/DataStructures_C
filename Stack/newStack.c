@@ -2,12 +2,12 @@
 #include<stdlib.h>
 #include"stack.h"
 
-Stack *newStack(){
+tStack *newStack(){
 
-    Stack *nStack = (Stack*)malloc(sizeof(Stack));
+    tStack *nStack = (tStack*)malloc(sizeof(tStack));
     nStack->top = NULL;
 
-//    void *stackPointer = nStack;
+//    void *stackPointer = ntStack;
     
     return nStack;
 }

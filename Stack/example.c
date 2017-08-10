@@ -10,7 +10,7 @@ typedef struct{
 
 }elemento;
 
-void printStk(Node *node){
+void printStk(tNode *node){
 	if(node->type == NULL){
 		printf("%lf\n", *(double*)node->key);
 	}
@@ -32,10 +32,10 @@ void printStk(Node *node){
 	}
 }
 
-void test(Stack *t){
+void test(tStack *t){
 
-	Node *n3 = newNode();
-	Node *n4 = newNode();
+	tNode *n3 = newNode();
+	tNode *n4 = newNode();
 
 	float *c = (float*) malloc(sizeof(float));
 	*c = 6;
@@ -49,12 +49,12 @@ void test(Stack *t){
 	pushStack(t, n4, NULL);
 }
 
-void loopTest(Stack *t){
+void loopTest(tStack *t){
 
 	int i = 0;
 
 	for (i = 0; i < 10; i++) {
-		Node *n = newNode();
+		tNode *n = newNode();
 		int *aux = (int*) malloc(sizeof(int));
 		*aux = i;
 		n->key = aux;
@@ -65,9 +65,9 @@ void loopTest(Stack *t){
 
 void main(){
     
-	Stack *t = newStack();
+	tStack *t = newStack();
 
-	Node *n1 = newNode();
+	tNode *n1 = newNode();
 
 	elemento *element = (elemento*) malloc(sizeof(elemento));
 	element->a = 5;

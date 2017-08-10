@@ -2,13 +2,13 @@
 #include <stdlib.h>
 #include "queue.h"
 
-void *popSimpleLinkedList(SimpleLinkedList *queue){
+void *popSimpleLinkedList(tSimpleLinkedList *queue){
 
 	if(isEmpty(queue)){
 		return NULL;
 	}
 	
-	Node *auxNode = queue->front;
+	tNode *auxNode = queue->front;
 	void *auxKey = queue->front->key;
 
 	queue->front = queue->front->next;

@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include "queue.h"
 
-int printSimpleLinkedList(const SimpleLinkedList *queue, void (*printKey)(Node *node)){
+int printSimpleLinkedList(const tSimpleLinkedList *queue, void (*printKey)(tNode *node)){
 
-	Node *auxNode = queue->front;
+	tNode *auxNode = queue->front;
 
 	while(auxNode != NULL){
 		printKey(auxNode);

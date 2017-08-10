@@ -2,13 +2,13 @@
 #include <stdlib.h>
 #include "stack.h"
 
-void *popStack(Stack *stack){
+void *popStack(tStack *stack){
 
 	if(isEmpty(stack)){
 		return NULL;
 	}
 	
-	Node *auxNode = stack->top;
+	tNode *auxNode = stack->top;
 	void *auxKey = stack->top->key;
 
 	stack->top = stack->top->next;

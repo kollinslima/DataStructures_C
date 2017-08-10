@@ -2,9 +2,9 @@
 #include<stdlib.h>
 #include"queue.h"
 
-SimpleLinkedList *newSimpleLinkedList(){
+tSimpleLinkedList *newSimpleLinkedList(){
 
-    SimpleLinkedList *nSLL = (SimpleLinkedList*)malloc(sizeof(SimpleLinkedList));
+    tSimpleLinkedList *nSLL = (tSimpleLinkedList*)malloc(sizeof(tSimpleLinkedList));
     nSLL->front = NULL;
     nSLL->back = NULL;
 
