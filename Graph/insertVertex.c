@@ -6,18 +6,29 @@ int insertVertex(tGraph *graph, unsigned int vertex){
     if(graph->graphType == MATRIX){  
         if(vertex >= graph->tStruct.tMatrixAdj.max_vertices){
             //Vertex is out of bounds
-            return 1;
+            return -1;
         }
         else if(isInstantiated(graph, vertex)){
             //Vertex not valid (already exists)
-            return 2;   
+            return -2;   
         }
         else{
             graph->num_vertices += 1;
-            graph->tStruct.tMatrixAdj.graph[vertex][vertex].tVertexMatrix.key = 0;   //set vertex as valid
             
-            //LIMPAR LINHA COLUNA
+            int i;
+            
+            //set vertex as valid
+            for(i = 0; i < graph->tStruct.tMatrixAdj.max_vertices; i += 1){
+                
+                graph->tStruct.tMatrixAdj.graph[vertex][i].tVertexMatrix.key = 0;
+                graph->tStruct.tMatrixAdj.graph[i][vertex].tVertexMatrix.key = 0;
+                
+            }
+		
         }
+        
+        return 0;
+        
     }
   
 }

@@ -28,8 +28,6 @@ typedef struct{
 	
 }tGraph;
 
-//********************Adjacency Matrix***************************//
-
 unsigned int firstAdj(tGraph *graph, unsigned int u);
 
 int freeGraph(tGraph **graph);
