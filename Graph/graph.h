@@ -1,48 +1,55 @@
 #ifndef _graph_h
 #define _graph_h
 
-/*
-typedef struct node{
-    void *key;
-    char *type;
-    struct node *next;
-}tNode;
-*/
-
 typedef int tDefaultType;
 
-typedef struct node{
-    tDefaultType key;
-}tNodeMatrix;
+typedef enum typeStruct {MATRIX, LIST1, LIST2} eGraphType;
+
+typedef union{
+    
+    struct{
+        tDefaultType key;
+    }tVertexMatrix;
+    
+}tVertex;
 
 typedef struct{
 	unsigned int num_vertices;
-	unsigned int max_vertices;
-	tNodeMatrix **graph;
-}tGraphMatrix;
+	eGraphType graphType;
+	
+	union{
+	    
+	    struct{
+	        unsigned int max_vertices;
+	        tVertex **graph;
+	    }tMatrixAdj;
+	    
+	}tStruct;
+	
+}tGraph;
 
 //********************Adjacency Matrix***************************//
 
-unsigned int firstAdj(tGraphMatrix *graph, unsigned int u);
+unsigned int firstAdj(tGraph *graph, unsigned int u);
 
-int freeGraphMatrix(tGraphMatrix **graph);
+int freeGraph(tGraph **graph);
 
-int hasAdj(tGraphMatrix *graph, unsigned int u);
+int hasAdj(tGraph *graph, unsigned int u);
 
-int insertArc(tGraphMatrix *graph, unsigned int u, unsigned int v, double weight);
+int insertArc(tGraph *graph, unsigned int u, unsigned int v, double weight);
 
-int insertVertex(tGraphMatrix *graph, unsigned int vertex);
+int insertVertex(tGraph *graph, unsigned int vertex);
 
-int isAdj(tGraphMatrix *graph, unsigned int u, unsigned int v);
+int isAdj(tGraph *graph, unsigned int u, unsigned int v);
 
-int isValid(tGraphMatrix *graph, unsigned int u);
+int isInstantiated(tGraph *graph, unsigned int u);
 
-tGraphMatrix *newGraphMatrix(unsigned int max_vertices);
+tGraph *newGraph(eGraphType type, unsigned int max_vertices);
 
-unsigned int nextAdj(tGraphMatrix *graph, unsigned int u, unsigned int lastAdj);
+unsigned int nextAdj(tGraph *graph, unsigned int u, unsigned int lastAdj);
 
-double removeArc(tGraphMatrix *graph, unsigned int u, unsigned int v);
+double removeArc(tGraph *graph, unsigned int u, unsigned int v);
 
-int removeVertex(tGraphMatrix *graph, unsigned int vertex);
+int removeVertex(tGraph *graph, unsigned int vertex);
 
 #endif

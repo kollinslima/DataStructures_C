@@ -4,7 +4,8 @@
 
 int main (int argc, char *argv[])
 {
-	tGraphMatrix *graph = newGraphMatrix(100);
+	//Test Graph MatrixAdj
+	tGraph *graph = newGraph(MATRIX,100);
 
 	return 0;
 }
