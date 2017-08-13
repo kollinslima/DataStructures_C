@@ -10,6 +10,16 @@ typedef struct{
 
 }elemento;
 
+int compareNode (tNode *node1, tNode *node2){
+
+	puts("compare");
+
+	if(!strcmp("INT", node1->type))
+		return (*(int*)node1->key == *(int*)node2->key);
+
+	return 0;
+}
+
 void printStk(tNode *node){
 	if(node->type == NULL){
 		printf("%lf\n", *(double*)node->key);
@@ -88,6 +98,19 @@ void main(){
 	puts("");
 
 	printStack(t,&printStk);
+
+	tNode *nodeTest = newNode();
+//	int *auxTest = (int*) malloc(sizeof(int));
+//	*auxTest = 5;
+//	nodeTest->key = auxTest;
+
+	nodeTest->key = (void*)malloc(sizeof(int));
+	*(int*)nodeTest->key = 5;
+
+	popNodeStack(t, nodeTest, &compareNode);
+
+	puts("");
+	printStack(t,&printStk);	
 
 	freeStack(&t);
 }

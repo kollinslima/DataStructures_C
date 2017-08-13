@@ -22,6 +22,8 @@ tStack *newStack();
 
 void *popStack(tStack *stack);
 
+void *popNodeStack(tStack *stack, tNode *node, int (*compareNode)(tNode *node1, tNode *node2));
+
 int pushStack(tStack *stack, tNode *node, char *type);
 
 int printStack(const tStack *stack, void (*printKey)(tNode *node));
