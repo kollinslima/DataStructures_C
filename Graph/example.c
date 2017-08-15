@@ -69,7 +69,6 @@ int main (int argc, char *argv[])
 	printf("NextAdj %d\n", nextAdj(graph,9,nextAdj(graph,9,firstAdj_nove)));
 	
 	freeGraph(&graph);
-		
 
 	return 0;
 }

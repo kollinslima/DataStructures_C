@@ -15,6 +15,8 @@ int freeStack(tStack **stack){
 	}
 
 	free(*stack);
+	
+	(*stack)->top = NULL;
 
 	return 0;
 }

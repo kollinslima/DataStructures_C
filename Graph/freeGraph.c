@@ -15,6 +15,8 @@ int freeGraph(tGraph **graph){
 		
 		free((*graph)->tStruct.tMatrixAdj.graph);
 		
+		(*graph)->tStruct.tMatrixAdj.graph = NULL;
+		
 		return 0;
     }
     
