@@ -6,7 +6,7 @@ unsigned int nextAdj(tGraph *graph, unsigned int u, unsigned int lastAdj){
     if(graph->graphType == MATRIX){
         if(u >= graph->tStruct.tMatrixAdj.max_vertices) {
              //Vertex is out of bounds
-            return -1;
+            return OUT_OF_BOUND;
         }
         else if(isInstantiated(graph,u)){
             
@@ -17,12 +17,12 @@ unsigned int nextAdj(tGraph *graph, unsigned int u, unsigned int lastAdj){
                     return i;
             }
             
-            return -3;
+            return OP_ERROR;
             
         }
         else{
             //Vertex not valid (one or both vertex not instantiated)
-            return -2;   
+            return VERTEX_INVALID;   
         }
     }
 }

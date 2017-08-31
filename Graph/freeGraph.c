@@ -11,6 +11,7 @@ int freeGraph(tGraph **graph){
         for (i = 0; i < (*graph)->tStruct.tMatrixAdj.max_vertices; i += 1)
 		{
 			free((*graph)->tStruct.tMatrixAdj.graph[i]);
+			(*graph)->tStruct.tMatrixAdj.graph[i] = NULL;
 		}
 		
 		free((*graph)->tStruct.tMatrixAdj.graph);

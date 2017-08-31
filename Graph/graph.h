@@ -1,6 +1,10 @@
 #ifndef _graph_h
 #define _graph_h
 
+#define OUT_OF_BOUND -1
+#define VERTEX_INVALID -2
+#define OP_ERROR -3
+
 typedef int tDefaultType;
 
 typedef enum typeStruct {MATRIX, LIST1, LIST2} eGraphType;
