@@ -4,21 +4,40 @@
 
 int freeGraph(tGraph **graph){
     
+    int i;
+    
     if((*graph)->graphType == MATRIX){
-        
-        int i;
         
         for (i = 0; i < (*graph)->tStruct.tMatrixAdj.max_vertices; i += 1)
 		{
-			free((*graph)->tStruct.tMatrixAdj.graph[i]);
 			(*graph)->tStruct.tMatrixAdj.graph[i] = NULL;
+			free((*graph)->tStruct.tMatrixAdj.graph[i]);
 		}
 		
 		free((*graph)->tStruct.tMatrixAdj.graph);
 		
 		(*graph)->tStruct.tMatrixAdj.graph = NULL;
 		
-		return 0;
+		free(*graph);
+		
     }
+    else if((*graph)->graphType == VECTOR_LIST){
+        
+        for(i = 0; i < (*graph)->tStruct.tVListAdj.max_vertices; i+=1){
+        	if((*graph)->tStruct.tVListAdj.graph[i].tVertexVList.instantiated)
+        		freeStack(&((*graph)->tStruct.tVListAdj.graph[i].tVertexVList.stackKey));
+        }
+        
+        (*graph)->tStruct.tVListAdj.graph = NULL;
+        
+        free((*graph)->tStruct.tVListAdj.graph);
+		
+		*graph = NULL;
+		
+		free(*graph);
+		
+    }
+    
+    return 0;
     
 }

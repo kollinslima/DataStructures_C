@@ -25,4 +25,26 @@ unsigned int firstAdj(tGraph *graph, unsigned int u){
             return VERTEX_INVALID;   
         }
     }
+    else if(graph->graphType == VECTOR_LIST){
+        if((u >= graph->tStruct.tVListAdj.max_vertices)) {
+             //Vertex is out of bounds
+            return OUT_OF_BOUND;
+        }
+        else if(isInstantiated(graph,u)){
+            
+            if(isEmpty(graph->tStruct.tVListAdj.graph[u].tVertexVList.stackKey)){
+                return OP_ERROR;
+            }
+            else{
+                tNode *auxNode = graph->tStruct.tVListAdj.graph[u].tVertexVList.stackKey->top;
+                return (*(tNodeVList*)auxNode->key).adjVertex;
+            }
+                
+                
+        }
+        else{
+            //Vertex not valid (one or both vertex not instantiated)
+            return VERTEX_INVALID;   
+        }
+    }
 }
