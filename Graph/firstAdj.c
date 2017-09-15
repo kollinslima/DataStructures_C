@@ -36,7 +36,7 @@ unsigned int firstAdj(tGraph *graph, unsigned int u){
                 return OP_ERROR;
             }
             else{
-                tNode *auxNode = graph->tStruct.tVListAdj.graph[u].tVertexVList.stackKey->top;
+                tNodeS *auxNode = graph->tStruct.tVListAdj.graph[u].tVertexVList.stackKey->top;
                 return (*(tNodeVList*)auxNode->key).adjVertex;
             }
                 

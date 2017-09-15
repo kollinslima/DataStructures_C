@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include"graph.h"
 
-int compareVertex(tNode *node1, tNode *node2){
+int compareVertex(tNodeS *node1, tNodeS *node2){
     return ((*(tNodeVList*)node1->key).adjVertex == (*(tNodeVList*)node2->key).adjVertex);
 }
 
@@ -30,7 +30,7 @@ double removeArc(tGraph *graph, unsigned int u, unsigned int v){
         }
         else if(isInstantiated(graph,u) && isInstantiated(graph,v)){
             
-            tNode *auxNode = newNodeStack();
+            tNodeS *auxNode = newNodeStack();
             auxNode->key = (void*)malloc(sizeof(tNodeVList));
 	        (*(tNodeVList*)auxNode->key).adjVertex = v;
 	        

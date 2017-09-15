@@ -26,7 +26,7 @@ int insertArc(tGraph *graph, unsigned int u, unsigned int v, double weight){
         }
         else if(isInstantiated(graph,u) && isInstantiated(graph,v)){
             
-            tNode *auxNode = newNodeStack();
+            tNodeS *auxNode = newNodeStack();
             auxNode->key = (void*)malloc(sizeof(tNodeVList));
 	        (*(tNodeVList*)auxNode->key).key = weight;
 	        (*(tNodeVList*)auxNode->key).adjVertex = v;

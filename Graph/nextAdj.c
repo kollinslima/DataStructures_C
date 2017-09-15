@@ -32,7 +32,7 @@ unsigned int nextAdj(tGraph *graph, unsigned int u, unsigned int lastAdj){
         }
         else if(isInstantiated(graph,u)){
                 
-            tNode *auxNode = graph->tStruct.tVListAdj.graph[u].tVertexVList.stackKey->top;
+            tNodeS *auxNode = graph->tStruct.tVListAdj.graph[u].tVertexVList.stackKey->top;
             
             while(auxNode != NULL){
                 

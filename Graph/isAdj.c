@@ -25,7 +25,7 @@ int isAdj(tGraph *graph, unsigned int u, unsigned int v){
         else if(isInstantiated(graph,u) && isInstantiated(graph,v)){
             
             tStack *auxStack = graph->tStruct.tVListAdj.graph[u].tVertexVList.stackKey;
-            tNode *auxNode = auxStack->top;
+            tNodeS *auxNode = auxStack->top;
 
         	while(auxNode != NULL){
         		if((*(tNodeVList*)auxNode->key).adjVertex == v)
