@@ -4,10 +4,10 @@
 unsigned int getMaxVertex(tGraph *graph){
     
     if(graph->graphType == MATRIX){
-        return graph->tStruct.tMatrixAdj.max_vertices = max_vertices;
+        return graph->tStruct.tMatrixAdj.max_vertices;
     }
     else if(graph->graphType == VECTOR_LIST){
-        return graph->tStruct.tVListAdj.max_vertices = max_vertices;
+        return graph->tStruct.tVListAdj.max_vertices;
     }
     else{
         return OP_ERROR;
