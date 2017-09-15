@@ -53,6 +53,8 @@ unsigned int firstAdj(tGraph *graph, unsigned int u);
 
 int freeGraph(tGraph **graph);
 
+unsigned int getMaxVertex(tGraph *graph);
+
 int hasAdj(tGraph *graph, unsigned int u);
 
 int insertArc(tGraph *graph, unsigned int u, unsigned int v, double weight);
