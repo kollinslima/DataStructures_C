@@ -22,7 +22,7 @@ int pushSimpleLinkedList(tSimpleLinkedList *queue, tNodeQ *node, char *type){
 		nNode->type == NULL;
 	}
 
-	if(isEmpty(queue)){
+	if(isEmptyQueue(queue)){
 		queue->front = nNode;
 	}
 	else{

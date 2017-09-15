@@ -4,7 +4,7 @@
 
 void *popSimpleLinkedList(tSimpleLinkedList *queue){
 
-	if(isEmpty(queue)){
+	if(isEmptyQueue(queue)){
 		return NULL;
 	}
 	

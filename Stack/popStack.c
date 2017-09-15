@@ -4,7 +4,7 @@
 
 void *popStack(tStack *stack){
 
-	if(isEmpty(stack)){
+	if(isEmptyStack(stack)){
 		return NULL;
 	}
 	

@@ -32,7 +32,7 @@ unsigned int firstAdj(tGraph *graph, unsigned int u){
         }
         else if(isInstantiated(graph,u)){
             
-            if(isEmpty(graph->tStruct.tVListAdj.graph[u].tVertexVList.stackKey)){
+            if(isEmptyStack(graph->tStruct.tVListAdj.graph[u].tVertexVList.stackKey)){
                 return OP_ERROR;
             }
             else{

@@ -1,10 +1,10 @@
 #ifndef _stack_h
 #define _stack_h
 
-typedef struct node{
+typedef struct nodeStk{
     void *key;
     char *type;
-    struct node *next;
+    struct nodeStk *next;
 }tNodeS;
 
 typedef struct{
@@ -14,7 +14,7 @@ typedef struct{
 
 int freeStack(tStack **stack);
 
-int isEmpty(const tStack *stack);
+int isEmptyStack(const tStack *stack);
 
 tNodeS *newNodeStack();
 

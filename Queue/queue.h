@@ -1,10 +1,10 @@
 #ifndef _queue_h
 #define _queue_h
 
-typedef struct node{
+typedef struct nodeQueue{
     void *key;
     char *type;
-    struct node *next;
+    struct nodeQueue *next;
 }tNodeQ;
 
 typedef struct{
@@ -16,7 +16,7 @@ typedef struct{
 
 int freeSimpleLinkedList(tSimpleLinkedList **queue);
 
-int isEmpty(const tSimpleLinkedList *queue);
+int isEmptyQueue(const tSimpleLinkedList *queue);
 
 tNodeQ *newNodeQueue();
 

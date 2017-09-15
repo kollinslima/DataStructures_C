@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "stack.h"
 
-int isEmpty(const tStack *stack){
+int isEmptyStack(const tStack *stack){
 
 	return stack->top == NULL;
 }

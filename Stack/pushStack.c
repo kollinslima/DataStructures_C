@@ -22,7 +22,7 @@ int pushStack(tStack *stack, tNodeS *node, char *type){
 		nNode->type == NULL;
 	}
 
-	if(isEmpty(stack)){
+	if(isEmptyStack(stack)){
 		nNode->next = NULL;
 	}
 	else{

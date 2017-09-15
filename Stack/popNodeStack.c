@@ -4,7 +4,7 @@
 
 void *popNodeStack(tStack *stack, tNodeS *node, int (*compareNode)(tNodeS *node1, tNodeS *node2)){
 
-	if(isEmpty(stack)){
+	if(isEmptyStack(stack)){
 		return NULL;
 	}
 	
