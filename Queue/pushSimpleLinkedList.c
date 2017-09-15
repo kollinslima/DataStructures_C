@@ -3,9 +3,9 @@
 #include<string.h>
 #include"queue.h"
 
-int pushSimpleLinkedList(tSimpleLinkedList *queue, tNode *node, char *type){
+int pushSimpleLinkedList(tSimpleLinkedList *queue, tNodeQ *node, char *type){
 
-	tNode *nNode = (tNode*) newNodeQueue();
+	tNodeQ *nNode = (tNodeQ*) newNodeQueue();
 
 	if (nNode == NULL) {
 		printf("Push fail (Stack): out of memory");

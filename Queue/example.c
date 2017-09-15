@@ -10,7 +10,7 @@ typedef struct{
 
 }elemento;
 
-void printQue(tNode *node){
+void printQue(tNodeQ *node){
 	if(node->type == NULL){
 		printf("%lf\n", *(double*)node->key);
 	}
@@ -34,8 +34,8 @@ void printQue(tNode *node){
 
 void test(tSimpleLinkedList *t){
 
-	tNode *n3 = newNodeQueue();
-	tNode *n4 = newNodeQueue();
+	tNodeQ *n3 = newNodeQueue();
+	tNodeQ *n4 = newNodeQueue();
 
 	float *c = (float*) malloc(sizeof(float));
 	*c = 6;
@@ -54,7 +54,7 @@ void loopTest(tSimpleLinkedList *t){
 	int i = 0;
 
 	for (i = 0; i < 10; i++) {
-		tNode *n = newNodeQueue();
+		tNodeQ *n = newNodeQueue();
 		int *aux = (int*) malloc(sizeof(int));
 		*aux = i;
 		n->key = aux;
@@ -67,7 +67,7 @@ void main(){
     
 	tSimpleLinkedList *t = newSimpleLinkedList();
 
-	tNode *n1 = newNodeQueue();
+	tNodeQ *n1 = newNodeQueue();
 
 	elemento *element = (elemento*) malloc(sizeof(elemento));
 	element->a = 5;

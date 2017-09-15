@@ -8,7 +8,7 @@ void *popSimpleLinkedList(tSimpleLinkedList *queue){
 		return NULL;
 	}
 	
-	tNode *auxNode = queue->front;
+	tNodeQ *auxNode = queue->front;
 	void *auxKey = queue->front->key;
 
 	queue->front = queue->front->next;

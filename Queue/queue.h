@@ -5,11 +5,11 @@ typedef struct node{
     void *key;
     char *type;
     struct node *next;
-}tNode;
+}tNodeQ;
 
 typedef struct{
-    tNode *front;
-    tNode *back;
+    tNodeQ *front;
+    tNodeQ *back;
 }tSimpleLinkedList;
 
 //********************SIMPLE LINKED LIST***************************//
@@ -18,14 +18,14 @@ int freeSimpleLinkedList(tSimpleLinkedList **queue);
 
 int isEmpty(const tSimpleLinkedList *queue);
 
-tNode *newNodeQueue();
+tNodeQ *newNodeQueue();
 
 tSimpleLinkedList *newSimpleLinkedList();
 
 void *popSimpleLinkedList(tSimpleLinkedList *queue);
 
-int pushSimpleLinkedList(tSimpleLinkedList *queue, tNode *node, char *type);
+int pushSimpleLinkedList(tSimpleLinkedList *queue, tNodeQ *node, char *type);
 
-int printSimpleLinkedList(const tSimpleLinkedList *queue, void (*printKey)(tNode *node));
+int printSimpleLinkedList(const tSimpleLinkedList *queue, void (*printKey)(tNodeQ *node));
 
 #endif

@@ -2,9 +2,9 @@
 #include<stdlib.h>
 #include"queue.h"
 
-tNode *newNodeQueue(){
+tNodeQ *newNodeQueue(){
 
-    tNode *nNode = (tNode*)malloc(sizeof(tNode));
+    tNodeQ *nNode = (tNodeQ*)malloc(sizeof(tNodeQ));
     nNode->key = NULL;
     nNode->type = NULL;
     

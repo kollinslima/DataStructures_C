@@ -8,7 +8,7 @@ int freeSimpleLinkedList(tSimpleLinkedList **queue){
 
 	while((*queue)->front != NULL){
 
-		tNode *auxNode = (*queue)->front;
+		tNodeQ *auxNode = (*queue)->front;
 		(*queue)->front = (*queue)->front->next;
 
 		if(auxNode->key != NULL){
