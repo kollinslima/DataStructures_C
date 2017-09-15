@@ -6,7 +6,7 @@ int freeStack(tStack **stack){
 
 	while((*stack)->top != NULL){
 
-		tNode *auxNode = (*stack)->top;
+		tNodeS *auxNode = (*stack)->top;
 		(*stack)->top = (*stack)->top->next;
 
 		if(auxNode->key != NULL){

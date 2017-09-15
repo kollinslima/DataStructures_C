@@ -2,13 +2,13 @@
 #include<stdlib.h>
 #include"stack.h"
 
-tNode *newNodeStack(){
+tNodeS *newNodeStack(){
 
-    tNode *nNode = (tNode*)malloc(sizeof(tNode));
+    tNodeS *nNode = (tNodeS*)malloc(sizeof(tNodeS));
     nNode->key = NULL;
     nNode->type = NULL;
     
-//    void *nodePointer = ntNode;
+//    void *nodePointer = ntNodeS;
     
     return nNode;
 }

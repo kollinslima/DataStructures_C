@@ -3,9 +3,9 @@
 #include<string.h>
 #include"stack.h"
 
-int pushStack(tStack *stack, tNode *node, char *type){
+int pushStack(tStack *stack, tNodeS *node, char *type){
 
-	tNode *nNode = (tNode*) newNodeStack();
+	tNodeS *nNode = (tNodeS*) newNodeStack();
 
 	if (nNode == NULL) {
 		printf("Push fail (Stack): out of memory");

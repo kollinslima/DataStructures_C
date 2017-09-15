@@ -2,17 +2,17 @@
 #include <stdlib.h>
 #include "stack.h"
 
-void *popNodeStack(tStack *stack, tNode *node, int (*compareNode)(tNode *node1, tNode *node2)){
+void *popNodeStack(tStack *stack, tNodeS *node, int (*compareNode)(tNodeS *node1, tNodeS *node2)){
 
 	if(isEmpty(stack)){
 		return NULL;
 	}
 	
-	tNode *auxNode = stack->top;
-	tNode *auxLastNode;
+	tNodeS *auxNode = stack->top;
+	tNodeS *auxLastNodeS;
 
 	while (auxNode != NULL && !compareNode(auxNode, node)){
-		auxLastNode = auxNode;
+		auxLastNodeS = auxNode;
 		auxNode = auxNode->next;
 	}
 
@@ -24,7 +24,7 @@ void *popNodeStack(tStack *stack, tNode *node, int (*compareNode)(tNode *node1, 
 			return popStack(stack);
 		}
 		else{
-			auxLastNode->next = auxNode->next;
+			auxLastNodeS->next = auxNode->next;
 			auxNode->next = NULL;
 		}
 	}

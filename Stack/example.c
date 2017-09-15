@@ -10,7 +10,7 @@ typedef struct{
 
 }elemento;
 
-int compareNode (tNode *node1, tNode *node2){
+int compareNode (tNodeS *node1, tNodeS *node2){
 
 	puts("compare");
 
@@ -20,7 +20,7 @@ int compareNode (tNode *node1, tNode *node2){
 	return 0;
 }
 
-void printStk(tNode *node){
+void printStk(tNodeS *node){
 	if(node->type == NULL){
 		printf("%lf\n", *(double*)node->key);
 	}
@@ -44,8 +44,8 @@ void printStk(tNode *node){
 
 void test(tStack *t){
 
-	tNode *n3 = newNodeStack();
-	tNode *n4 = newNodeStack();
+	tNodeS *n3 = newNodeStack();
+	tNodeS *n4 = newNodeStack();
 
 	float *c = (float*) malloc(sizeof(float));
 	*c = 6;
@@ -64,7 +64,7 @@ void loopTest(tStack *t){
 	int i = 0;
 
 	for (i = 0; i < 10; i++) {
-		tNode *n = newNodeStack();
+		tNodeS *n = newNodeStack();
 		int *aux = (int*) malloc(sizeof(int));
 		*aux = i;
 		n->key = aux;
@@ -77,7 +77,7 @@ void main(){
     
 	tStack *t = newStack();
 
-	tNode *n1 = newNodeStack();
+	tNodeS *n1 = newNodeStack();
 
 	elemento *element = (elemento*) malloc(sizeof(elemento));
 	element->a = 5;
@@ -99,7 +99,7 @@ void main(){
 
 	printStack(t,&printStk);
 
-	tNode *nodeTest = newNodeStack();
+	tNodeS *nodeTest = newNodeStack();
 //	int *auxTest = (int*) malloc(sizeof(int));
 //	*auxTest = 5;
 //	nodeTest->key = auxTest;

@@ -8,7 +8,7 @@ void *popStack(tStack *stack){
 		return NULL;
 	}
 	
-	tNode *auxNode = stack->top;
+	tNodeS *auxNode = stack->top;
 	void *auxKey = stack->top->key;
 
 	stack->top = stack->top->next;
