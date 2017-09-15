@@ -1,13 +1,14 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include"stack.h"
+#include"queue.h"
 
-tNode *newNode(){
+tNode *newNodeQueue(){
 
     tNode *nNode = (tNode*)malloc(sizeof(tNode));
     nNode->key = NULL;
     nNode->type = NULL;
-//    void *nodePointer = ntNode;
+    
+    //    void *nodePointer = nNode;
     
     return nNode;
 }

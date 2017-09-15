@@ -5,7 +5,7 @@
 
 int pushStack(tStack *stack, tNode *node, char *type){
 
-	tNode *nNode = (tNode*) newNode();
+	tNode *nNode = (tNode*) newNodeStack();
 
 	if (nNode == NULL) {
 		printf("Push fail (Stack): out of memory");

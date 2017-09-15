@@ -15,8 +15,11 @@ void *popSimpleLinkedList(tSimpleLinkedList *queue){
 	
 	if(queue->front == NULL) queue->back = NULL;
 
-	if(auxNode->key != NULL) free(auxNode->key);
-	if(auxNode->type != NULL) free(auxNode->type);
+	//if(auxNode->key != NULL) free(auxNode->key);
+	if(auxNode->type != NULL){
+		auxNode->type = NULL;
+		free(auxNode->type);	
+	} 
 	free(auxNode);	
 
 	return auxKey;

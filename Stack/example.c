@@ -44,8 +44,8 @@ void printStk(tNode *node){
 
 void test(tStack *t){
 
-	tNode *n3 = newNode();
-	tNode *n4 = newNode();
+	tNode *n3 = newNodeStack();
+	tNode *n4 = newNodeStack();
 
 	float *c = (float*) malloc(sizeof(float));
 	*c = 6;
@@ -64,7 +64,7 @@ void loopTest(tStack *t){
 	int i = 0;
 
 	for (i = 0; i < 10; i++) {
-		tNode *n = newNode();
+		tNode *n = newNodeStack();
 		int *aux = (int*) malloc(sizeof(int));
 		*aux = i;
 		n->key = aux;
@@ -77,7 +77,7 @@ void main(){
     
 	tStack *t = newStack();
 
-	tNode *n1 = newNode();
+	tNode *n1 = newNodeStack();
 
 	elemento *element = (elemento*) malloc(sizeof(elemento));
 	element->a = 5;
@@ -99,7 +99,7 @@ void main(){
 
 	printStack(t,&printStk);
 
-	tNode *nodeTest = newNode();
+	tNode *nodeTest = newNodeStack();
 //	int *auxTest = (int*) malloc(sizeof(int));
 //	*auxTest = 5;
 //	nodeTest->key = auxTest;

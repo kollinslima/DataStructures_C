@@ -16,9 +16,9 @@ typedef struct{
 
 int freeSimpleLinkedList(tSimpleLinkedList **queue);
 
-int isEmpty(tSimpleLinkedList *queue);
+int isEmpty(const tSimpleLinkedList *queue);
 
-tNode *newNode();
+tNode *newNodeQueue();
 
 tSimpleLinkedList *newSimpleLinkedList();
 

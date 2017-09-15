@@ -5,7 +5,7 @@
 
 int pushSimpleLinkedList(tSimpleLinkedList *queue, tNode *node, char *type){
 
-	tNode *nNode = (tNode*) newNode();
+	tNode *nNode = (tNode*) newNodeQueue();
 
 	if (nNode == NULL) {
 		printf("Push fail (Stack): out of memory");

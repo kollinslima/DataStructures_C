@@ -14,9 +14,9 @@ typedef struct{
 
 int freeStack(tStack **stack);
 
-int isEmpty(tStack *stack);
+int isEmpty(const tStack *stack);
 
-tNode *newNode();
+tNode *newNodeStack();
 
 tStack *newStack();
 

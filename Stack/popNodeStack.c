@@ -31,8 +31,11 @@ void *popNodeStack(tStack *stack, tNode *node, int (*compareNode)(tNode *node1, 
 
 	void *auxKey = auxNode->key;
 
-	if(auxNode->key != NULL) free(auxNode->key);
-	if(auxNode->type != NULL) free(auxNode->type);
+	//if(auxNode->key != NULL) free(auxNode->key);
+	if(auxNode->type != NULL){ 
+		auxNode->type = NULL;
+		free(auxNode->type);
+	}
 	free(auxNode);	
 
 	return auxKey;
