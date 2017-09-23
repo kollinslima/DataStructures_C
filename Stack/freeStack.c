@@ -8,15 +8,16 @@ int freeStack(tStack **stack){
 
 		tNodeS *auxNode = (*stack)->top;
 		(*stack)->top = (*stack)->top->next;
-
-		if(auxNode->key != NULL){
-			auxNode->key = NULL;
-			free(auxNode->key);	
-		} 
-		if(auxNode->type != NULL){
-			auxNode->type = NULL;
-			free(auxNode->type);	
-		} 
+	
+	
+		free(auxNode->key);	
+		auxNode->key = NULL;
+	
+	
+		free(auxNode->type);	
+		auxNode->type = NULL;
+			
+	
 		free(auxNode);
 	}
 
