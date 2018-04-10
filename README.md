@@ -2,4 +2,4 @@
 
 Here are some data structures writen in C
 
-Developed by: Kollins Lima
+Developed by: Kollins Lima (kollins.lima@gmail.com)
